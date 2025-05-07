@@ -1,0 +1,21 @@
+{
+	"name": "heroku-test",
+	"scripts": {
+		"postbuild": "cd frontend && npm install && npm run build"
+	},
+	"buildpacks": [
+		{
+			"url": "heroku/python"
+		},
+		{
+			"url": "heroku/nodejs"
+		},
+		{
+			"url": "https://github.com/Thomas-Boi/heroku-playwright-python-browsers.git"
+		},
+		{
+			"url": "https://github.com/mxschmitt/heroku-playwright-buildpack.git"
+		}
+	],
+	"cacheDirectories": ["frontend/node_modules"]
+}
